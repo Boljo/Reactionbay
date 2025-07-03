@@ -1,40 +1,146 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# ReactionBay - The Amazon of Scientific Equipment
+
+A Next.js marketplace landing page for scientific equipment, featuring internationalization support for English (.com) and German (.de) domains.
+
+## Features
+
+- 🌍 **Internationalization**: Automatic language detection based on domain
+  - `reactionbay.com` → English
+  - `reactionbay.de` → German
+- 🎨 **Amazon-like Design**: Modern, responsive UI inspired by Amazon's marketplace
+- 📧 **Email Subscription**: Collect interested users for launch notifications
+- 📱 **Responsive Design**: Works perfectly on desktop, tablet, and mobile
+- ⚡ **Fast Performance**: Built with Next.js and optimized for speed
+
+## Tech Stack
+
+- **Framework**: Next.js 15 with TypeScript
+- **Styling**: Tailwind CSS
+- **Internationalization**: Custom i18n solution
+- **Deployment**: Ready for Hetzner server deployment
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <your-repo-url>
+cd reactionbay
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+3. Run the development server:
+```bash
+npm run dev
+```
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+reactionbay/
+├── src/
+│   ├── components/
+│   │   └── LandingPage.tsx      # Main landing page component
+│   ├── locales/
+│   │   ├── en.json             # English translations
+│   │   └── de.json             # German translations
+│   ├── pages/
+│   │   ├── api/
+│   │   │   └── subscribe.ts    # Email subscription API
+│   │   └── index.tsx           # Main page with i18n
+│   └── utils/
+│       └── i18n.ts             # Internationalization utilities
+├── public/                     # Static assets
+└── data/                       # Generated data (subscribers)
+```
 
-## Learn More
+## Deployment
 
-To learn more about Next.js, take a look at the following resources:
+### Local Testing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+To test different languages locally, you can modify your hosts file or use different ports:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+# English version
+npm run dev
 
-## Deploy on Vercel
+# German version (test with different port)
+npm run dev -- -p 3001
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Production Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+1. Build the application:
+```bash
+npm run build
+```
+
+2. Start the production server:
+```bash
+npm start
+```
+
+### Domain Configuration
+
+- **reactionbay.com**: Points to English version
+- **reactionbay.de**: Points to German version
+
+Both domains should point to your Hetzner server IP: `95.217.131.27`
+
+## Email Subscriptions
+
+Subscriptions are stored in `data/subscribers.txt` with the format:
+```
+email@example.com,2024-01-01T12:00:00.000Z
+```
+
+## Customization
+
+### Adding New Languages
+
+1. Create a new translation file in `src/locales/` (e.g., `fr.json`)
+2. Update the `getLocaleFromHost` function in `src/utils/i18n.ts`
+3. Add the new locale to the `Locale` type
+
+### Modifying the Design
+
+The main styling is in `src/components/LandingPage.tsx` using Tailwind CSS classes. The design follows Amazon's color scheme with orange accents.
+
+### Adding Real Images
+
+Replace the placeholder mockup section in `LandingPage.tsx` with your actual UI mockup images:
+
+```tsx
+{/* Replace this section with your actual mockup */}
+<div className="aspect-video bg-gradient-to-br from-orange-100 to-orange-200 rounded-lg flex items-center justify-center">
+  {/* Your mockup image here */}
+</div>
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## License
+
+This project is private and proprietary to ReactionBay.
+
+## Support
+
+For questions or support, contact the development team.

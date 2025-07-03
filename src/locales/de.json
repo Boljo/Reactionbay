@@ -1,0 +1,36 @@
+{
+  "hero": {
+    "title": "Willkommen bei ReactionBay",
+    "subtitle": "Das Amazon für wissenschaftliche Ausrüstung",
+    "description": "Entdecken Sie Premium-Wissenschaftsinstrumente von Bruker, Thermo Fisher und führenden Herstellern. Bald verfügbar, um Ihre Forschung zu revolutionieren."
+  },
+  "subscription": {
+    "title": "Seien Sie der Erste, der es erfährt",
+    "description": "Erhalten Sie Benachrichtigungen beim Launch und exklusiven Frühzugang",
+    "placeholder": "Geben Sie Ihre E-Mail-Adresse ein",
+    "button": "Abonnieren",
+    "success": "Vielen Dank! Sie werden benachrichtigt, wenn wir starten.",
+    "error": "Bitte geben Sie eine gültige E-Mail-Adresse ein."
+  },
+  "features": {
+    "title": "Warum ReactionBay?",
+    "items": [
+      {
+        "title": "Premium-Ausrüstung",
+        "description": "Direkter Zugang zu erstklassigen Wissenschaftsinstrumenten"
+      },
+      {
+        "title": "Experten-Support",
+        "description": "Technische Expertise von zertifizierten Fachleuten"
+      },
+      {
+        "title": "Sichere Transaktionen",
+        "description": "Sichere und zuverlässige Kauferfahrung"
+      }
+    ]
+  },
+  "footer": {
+    "copyright": "© 2024 ReactionBay. Alle Rechte vorbehalten.",
+    "comingSoon": "Demnächst verfügbar"
+  }
+} 
